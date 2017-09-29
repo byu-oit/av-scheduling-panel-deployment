@@ -29,3 +29,6 @@ sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/first-boot.service' /media/jess
 
 
 sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/pi-setup.sh' /media/mountpoint/tmp
+
+
+Additional thoughts are coming as I write
