@@ -5,8 +5,8 @@
 # The script assumes the username of the autologin user is "pi"
 
 # Run the `sudo.sh` code block to install necessary packages and commands
-# curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/sudo.sh > /tmp/sudo.sh
-sudo cp /srv/scripts/sudo.sh /tmp/sudo.sh
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/sudo.sh > /tmp/sudo.sh
+#sudo cp /srv/scripts/sudo.sh /tmp/sudo.sh
 chmod +x /tmp/sudo.sh
 sudo sh -c "bash /tmp/sudo.sh"
 
@@ -20,8 +20,8 @@ chmod +x /home/pi/.xinitrc
 
 # Configure i3
 mkdir /home/pi/.i3
-#curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/i3_config > /home/pi/.i3/config
-sudo cp /srv/files/i3_config /home/pi/.i3/config
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/i3_config > /home/pi/.i3/config
+#sudo cp /srv/files/i3_config /home/pi/.i3/config
 
 #### Unneeded at this point ####
 # Install an ARM-specific Docker version
@@ -29,7 +29,7 @@ sudo cp /srv/files/i3_config /home/pi/.i3/config
 #sudo sh -c "dpkg -i /tmp/docker-hypriot_1.10.3-1_armhf.deb; usermod -aG docker pi; systemctl enable docker.service"
 
 # Make X start on login
-curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/bash_profile > /home/pi/.bash_profile
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/bash_profile > /home/pi/.bash_profile
 #cp /tmp/bash_profile /home/pi/.bash_profile
 
 #sudo sh -c "reboot"

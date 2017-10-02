@@ -58,7 +58,8 @@ pip install docker-compose
 
 # Install Salt-Minion on Pi and configure minion to talk to the salt-master
 wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
+#cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
 
 sudo apt-get update
 sudo apt-get -y install salt-minion
@@ -83,12 +84,15 @@ cp /usr/share/zoneinfo/America/Denver /etc/localtime
 # Add the `pi` user to the sudoers group
 usermod -aG sudo pi
 
+# install golang 
+apt -y install golang
+
 # Install docker for arm and set Pi user as a member of the docker group
-until $(sudo usermod -aG docker pi); do
-	curl -sSL https://get.docker.com -k | sh
-	wait
-done
-echo "Added docker and user pi to the docker group"
+# until $(sudo usermod -aG docker pi); do
+#	curl -sSL https://get.docker.com -k | sh
+#	wait
+#done
+#echo "Added docker and user pi to the docker group"
 
 # set to update from byu servers
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/ntp.conf > /etc/ntp.conf
@@ -98,14 +102,18 @@ ntpdate-debian
 systemctl start ntp
 ntpq -p
 
+# Node.js 8 installation 
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 #Download docker container
-docker image pull httpd
+#docker image pull httpd
 
 sleep 60
 
 #Configure container to run
-docker run -d -p 8011:80 --name="httpd" --restart=always httpd
+#docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
-sleep 60
+#sleep 60
 
 
