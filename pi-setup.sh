@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This script is used to install and set up dependencies on a newly wiped/installed Raspberry Pi
 # For clean execution, run this script inside of the /tmp directory with `./pi-setup.sh`

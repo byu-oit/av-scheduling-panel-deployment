@@ -20,7 +20,7 @@ sudo chvt 2
 	curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
 	
 	# sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh	
-	chmod +x /tmp/pi-setup.sh
+	chmod 755 /tmp/pi-setup.sh
 
 #	echo "Removing first boot file."
 #	sudo rm $bootfile
