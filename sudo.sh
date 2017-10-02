@@ -91,7 +91,7 @@ done
 echo "Added docker and user pi to the docker group"
 
 # set to update from byu servers
-curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/ntp.conf > /etc/ntp.conf
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/ntp.conf > /etc/ntp.conf
 apt -y install ntpdate
 systemctl stop ntp
 ntpdate-debian
