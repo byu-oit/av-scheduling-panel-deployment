@@ -46,7 +46,7 @@ apt -y autoremove
 apt -y autoclean
 
 # Patch the Dirty COW kernel vulnerability
-apt -y install raspberrypi-kernel 
+apt -y install raspberrypi-kernel
 
 # Install UI dependencies
 apt -y install xorg i3 suckless-tools chromium-browser
@@ -58,13 +58,13 @@ pip install docker-compose
 
 # Install Salt-Minion on Pi and configure minion to talk to the salt-master
 wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
-#cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
+#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
+cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
 
 sudo apt-get update
 sudo apt-get -y install salt-minion
 
-# Copy minion file and add minion 
+# Copy minion file and add minion
 cp /srv/files/minion /etc/salt/minion
 #PI_HOSTNAME=$(hostname)
 sed -i 's/\$PI_HOSTNAME/'$desired_hostname'/' /etc/salt/minion
@@ -84,7 +84,7 @@ cp /usr/share/zoneinfo/America/Denver /etc/localtime
 # Add the `pi` user to the sudoers group
 usermod -aG sudo pi
 
-# install golang 
+# install golang
 apt -y install golang
 
 # Install docker for arm and set Pi user as a member of the docker group
@@ -102,7 +102,7 @@ ntpdate-debian
 systemctl start ntp
 ntpq -p
 
-# Node.js 8 installation 
+# Node.js 8 installation
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
@@ -115,5 +115,3 @@ sleep 60
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
 #sleep 60
-
-

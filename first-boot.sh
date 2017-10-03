@@ -16,15 +16,15 @@ sudo chvt 2
 	#until $(curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh); do
 	#	echo "Trying again."
 	#done
-	
-	curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
-	
-	# sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh	
+
+	#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
+
+	sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh
 	chmod 755 /tmp/pi-setup.sh
 
 #	echo "Removing first boot file."
 #	sudo rm $bootfile
-	
+
 	echo "Running PI setup script . . ."
 	/tmp/pi-setup.sh
 #else

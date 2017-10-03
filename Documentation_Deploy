@@ -11,7 +11,7 @@ sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/sudo.sh' /media/jessie/srv/scri
 sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/config_files/minion' /media/jessie/srv/files
 sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/config_files/i3_config' /media/jessie/srv/files/i3_config
 
-sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/first-boot.service' /media/jessie/usr/lib/systemd/system/ 
+sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/first-boot.service' /media/jessie/usr/lib/systemd/system/
 
 sudo ln -s /media/jessie/usr/lib/systemd/system/first-boot.service /media/jessie/usr/lib/systemd/system/default.target.wants/first-boot.service
 
@@ -23,7 +23,7 @@ sudo chmod 755 /media/jessie/srv/scripts/sudo.sh
 sudo umount /media/jessie
 
 
-#######################################################################################3
+#######################################################################################
 sudo cp '/home/creeder/Desktop/Room_Scheduler_Pi/first-boot.service' /media/jessie/usr/lib/systemd/system/default.target.wants/
 
 
