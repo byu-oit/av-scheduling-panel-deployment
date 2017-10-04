@@ -8,7 +8,6 @@ mkdir /media/jessie/srv/files
 mkdir /media/jessie/usr/lib/systemd/system
 mkdir /media/jessie/usr/lib/systemd/system/default.target.wants
 
-
 cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/first-boot.sh' /media/jessie/usr/bin
 cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/pi-setup.sh' /media/jessie/srv/scripts/
 #cp '/home/creeder/Desktop/Room_Scheduler_Pi/sudo.sh' /media/jessie/srv/scripts/
@@ -20,8 +19,8 @@ cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/first-b
 
 ln -s /media/jessie/usr/lib/systemd/system/first-boot.service /media/jessie/usr/lib/systemd/system/default.target.wants/first-boot.service
 
-chmod 755 /media/jessie/usr/lib/systemd/system/first-boot.service
-chmod 755 /media/jessie/usr/bin/first-boot.sh
+sudo chmod 755 /media/jessie/usr/lib/systemd/system/first-boot.service
+sudo chmod 755 /media/jessie/usr/bin/first-boot.sh
 #chmod 755 /media/jessie/srv/scripts/pi-setup.sh
 #chmod 755 /media/jessie/srv/scripts/sudo.sh
 
