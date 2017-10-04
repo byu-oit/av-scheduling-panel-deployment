@@ -58,8 +58,8 @@ pip install docker-compose
 
 # Install Salt-Minion on Pi and configure minion to talk to the salt-master
 wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
-cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
+#cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
 
 sudo apt-get update
 sudo apt-get -y install salt-minion

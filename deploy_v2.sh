@@ -4,7 +4,7 @@ mount ~/Desktop/2017-07-05-raspbian-jessie-lite.img -o offset=$[512*94208] /medi
 sleep 10
 
 cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/first-boot.sh' /media/jessie/usr/bin
-#cp '/home/creeder/Desktop/Room_Scheduler_Pi/pi-setup.sh' /media/jessie/srv/scripts/
+cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/pi-setup.sh' /media/jessie/srv/scripts/
 #cp '/home/creeder/Desktop/Room_Scheduler_Pi/sudo.sh' /media/jessie/srv/scripts/
 cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/files/minion' /media/jessie/srv/files/minion
 #cp '/home/creeder/Desktop/Room_Scheduler_Pi/config_files/i3_config' /media/jessie/srv/files/i3_config
