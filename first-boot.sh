@@ -14,6 +14,7 @@ sudo chvt 2
 
 	# download pi-setup script
 	until $(curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh); do
+		sleep 30
 		echo "Trying again."
 	done
 
