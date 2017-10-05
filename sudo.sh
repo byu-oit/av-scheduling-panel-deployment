@@ -85,7 +85,7 @@ cp /usr/share/zoneinfo/America/Denver /etc/localtime
 usermod -aG sudo pi
 
 # install golang
-apt -y install golang
+#apt -y install golang
 
 # Install docker for arm and set Pi user as a member of the docker group
 # until $(sudo usermod -aG docker pi); do

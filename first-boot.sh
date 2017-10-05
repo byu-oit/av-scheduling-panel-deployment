@@ -13,12 +13,12 @@ sudo chvt 2
 	echo "First boot."
 
 	# download pi-setup script
-	until $(curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh); do
-		sleep 30
-		echo "Trying again."
-	done
+	#until $(curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh); do
+	#	sleep 30
+	#	echo "Trying again."
+	#done
 
-	#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
+	curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
 
 	#sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh
 	sudo chmod 755 /tmp/pi-setup.sh

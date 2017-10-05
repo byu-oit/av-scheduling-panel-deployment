@@ -9,7 +9,7 @@ mkdir /media/jessie/usr/lib/systemd/system
 mkdir /media/jessie/usr/lib/systemd/system/default.target.wants
 
 cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/first-boot.sh' /media/jessie/usr/bin
-cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/pi-setup.sh' /media/jessie/srv/scripts/
+#cp '/home/creeder/git/av_scheduling_panel/av-scheduling-panel-deployment/pi-setup.sh' /media/jessie/srv/scripts/
 #cp '/home/creeder/Desktop/Room_Scheduler_Pi/sudo.sh' /media/jessie/srv/scripts/
 cp '/home/creeder/Desktop/Room_Scheduler_Pi/config_files/minion' /media/jessie/srv/files/minion
 #cp '/home/creeder/Desktop/Room_Scheduler_Pi/config_files/i3_config' /media/jessie/srv/files/i3_config
