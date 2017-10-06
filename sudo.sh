@@ -131,7 +131,7 @@ echo "export GOSRC=~/go/src" >> ~/.profile
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.profile
 
 # install Git
-sudo apt install git
+sudo apt -y install git
 
 # Install GVT
 go get -u github.com/FiloSottile/gvt
