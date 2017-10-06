@@ -115,9 +115,23 @@ sleep 60
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
 #Install go
-wget --no-check-certificate https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz > /tmp/go1.9.linux-armv6l.tar.gz
 cd /tmp
-sudo tar -C /usr/local -xzf go1.9.linux-armv6l.tar.gz
+until $(wget --no-check-certificate https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz); do
+	sleep 10
+	echo "waiting for download to complete"
+done
+
+sudo tar -C /usr/local -xzf /tmp/go1.9.linux-armv6l.tar.gz
+
+echo "Setting up Go evironment"
+mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
+
+echo "Setting up Go evironmental variables"
+echo "" >> ~/.profile
+echo "# golang" >> ~/.profile
+echo "export GOPATH=~/go" >> ~/.profile
+echo "export GOSRC=~/go/src" >> ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.profile
 
 # install Git
 sudo apt install git
