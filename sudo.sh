@@ -114,4 +114,27 @@ sleep 60
 #Configure container to run
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
+#Install go
+wget --no-check-certificate https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz > /tmp/go1.9.linux-armv6l.tar.gz
+cd /tmp
+sudo tar -C /usr/local -xzf go1.9.linux-armv6l.tar.gz
+
+# install Git
+sudo apt install git
+
+# Install GVT
+go get -u github.com/FiloSottile/gvt
+
+# Install AV-Scheduling Dependencies
+#gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
+gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
+
+# Install Scheduling-Panel
+go get github.com/byu-oit/av-scheduling-ui
+cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
+npm install --save
+
+# Start the Scheduling-Panel
+go run server.go &
+
 #sleep 60

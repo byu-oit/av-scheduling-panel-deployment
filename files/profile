@@ -28,3 +28,4 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lo
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
+go run $GOPATH/src/github.com/byu-oit/av-scheduling-ui/server.go &
