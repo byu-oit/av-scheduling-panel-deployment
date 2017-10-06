@@ -116,7 +116,7 @@ sleep 60
 
 #Install go
 cd /tmp
-curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz) -o /tmp/go1.9.linux-armv6l.tar.gz
+curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /tmp/go1.9.linux-armv6l.tar.gz
 
 sudo tar -C /usr/local -xzf go1.9.linux-armv6l.tar.gz
 
