@@ -52,9 +52,9 @@ apt -y install raspberrypi-kernel
 apt -y install xorg i3 suckless-tools chromium-browser
 
 # Install an ARM build of docker-compose
-apt -y install python-pip
-easy_install --upgrade pip
-pip install docker-compose
+#apt -y install python-pip
+#easy_install --upgrade pip
+#pip install docker-compose
 
 # Install Salt-Minion on Pi and configure minion to talk to the salt-master
 wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
