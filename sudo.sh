@@ -115,10 +115,11 @@ sleep 60
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
 #Install go
-cd /tmp
-curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /tmp/go1.9.linux-armv6l.tar.gz
+mkdir /home/pi/downloads
 
-sudo tar -C /usr/local -xzf go1.9.linux-armv6l.tar.gz
+curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /home/pi/downloads/go1.9.linux-armv6l.tar.gz
+
+sudo tar -C /usr/local -xzf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
 echo "Setting up Go evironment"
 mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
