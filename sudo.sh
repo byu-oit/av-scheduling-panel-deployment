@@ -116,12 +116,9 @@ sleep 60
 
 #Install go
 cd /tmp
-until $(wget --no-check-certificate https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz); do
-	sleep 10
-	echo "waiting for download to complete"
-done
+curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz) -o /tmp/go1.9.linux-armv6l.tar.gz
 
-sudo tar -C /usr/local -xzf /tmp/go1.9.linux-armv6l.tar.gz
+sudo tar -C /usr/local -xzf go1.9.linux-armv6l.tar.gz
 
 echo "Setting up Go evironment"
 mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
