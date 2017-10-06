@@ -119,7 +119,7 @@ mkdir /home/pi/downloads
 
 curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
-sudo tar -C /usr/local -xzf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
+sudo tar -C /usr/local -xf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
 echo "Setting up Go evironment"
 mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
