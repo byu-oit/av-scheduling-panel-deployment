@@ -130,6 +130,14 @@ echo "# golang" >> ~/.profile
 echo "export GOPATH=~/go" >> ~/.profile
 echo "export GOSRC=~/go/src" >> ~/.profile
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.profile
+source ~/.profile
+
+echo "Setting up Go environment variables for the Pi user"
+echo "" >> /home/pi/.profile
+echo "# golang" >> /home/pi/.profile
+echo "export GOPATH=~/go" >> /home/pi/.profile
+echo "export GOSRC=~/go/src" >> /home/pi/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 
 # install Git
 apt -y install git
@@ -147,6 +155,6 @@ cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 npm install --save
 
 # Start the Scheduling-Panel
-go run server.go &
+# go run server.go &
 
 #sleep 60
