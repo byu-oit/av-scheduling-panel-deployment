@@ -144,10 +144,12 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 apt -y install git
 
 # Change Install Directory
-cd /home/pi 
+cd /home/pi
 
 # Install GVT
 go get -u github.com/FiloSottile/gvt
+
+cd /home/pi/go
 
 # Install AV-Scheduling Dependencies
 #gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
