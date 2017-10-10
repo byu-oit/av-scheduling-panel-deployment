@@ -128,9 +128,9 @@ mkdir /home/pi/go /home/pi/go/src /home/pi/go/bin /home/pi/go/pkg
 echo "Setting up Go evironmental variables"
 echo "" >> ~/.profile
 echo "# golang" >> ~/.profile
-echo "export GOPATH=~/go" >> ~/.profile
-echo "export GOSRC=~/go/src" >> ~/.profile
-echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.profile
+echo "export GOPATH=/home/pi/go" >> ~/.profile
+echo "export GOSRC=/home/pi/go/src" >> ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:/home/pi/go/bin" >> ~/.profile
 source ~/.profile
 
 echo "Setting up Go environment variables for the Pi user"
@@ -148,12 +148,12 @@ go get -u github.com/FiloSottile/gvt
 
 # Install AV-Scheduling Dependencies
 #gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
-#gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
+gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 
 # Install Scheduling-Panel
-#go get github.com/byu-oit/av-scheduling-ui
-#cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
-#sudo npm install --save
+go get github.com/byu-oit/av-scheduling-ui
+cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
+sudo npm install --save
 
 # Start the Scheduling-Panel
 # go run server.go &
