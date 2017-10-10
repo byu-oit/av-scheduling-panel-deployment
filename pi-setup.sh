@@ -32,6 +32,9 @@ curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/ma
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/bash_profile > /home/pi/.bash_profile
 #cp /tmp/bash_profile /home/pi/.bash_profile
 
+#Trying to switch user to pi
+su pi
+
 # source the new exports
 source ~/.profile
 
