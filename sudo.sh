@@ -143,6 +143,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 # install Git
 apt -y install git
 
+# Change Install Directory
+cd /home/pi 
+
 # Install GVT
 go get -u github.com/FiloSottile/gvt
 
@@ -153,7 +156,8 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 # Install Scheduling-Panel
 go get github.com/byu-oit/av-scheduling-ui
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
-sudo npm install --save
+npm install --save
+npm install angular2 angular2-cli
 
 # Start the Scheduling-Panel
 # go run server.go &
