@@ -33,21 +33,21 @@ curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/ma
 #cp /tmp/bash_profile /home/pi/.bash_profile
 
 #Trying to switch user to pi
-su pi
+#su pi
 
 # source the new exports
-source ~/.profile
+#source ~/.profile
 
 # Install GVT
-go get -u github.com/FiloSottile/gvt
+#go get -u github.com/FiloSottile/gvt
 
 # Install AV-Scheduling Dependencies
 #gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
-gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
+#gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 
 # Install Scheduling-Panel
-go get github.com/byu-oit/av-scheduling-ui
-cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
-sudo npm install --save
+#go get github.com/byu-oit/av-scheduling-ui
+#cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
+#sudo npm install --save
 
 #sudo sh -c "reboot"
