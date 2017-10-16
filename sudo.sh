@@ -119,23 +119,37 @@ mkdir /home/pi/downloads
 
 curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
-sudo tar -C /usr/local -xzf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
+tar -C /usr/local -xf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
 echo "Setting up Go evironment"
 mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
+mkdir /home/pi/go /home/pi/go/src /home/pi/go/bin /home/pi/go/pkg
 
 echo "Setting up Go evironmental variables"
 echo "" >> ~/.profile
 echo "# golang" >> ~/.profile
-echo "export GOPATH=~/go" >> ~/.profile
-echo "export GOSRC=~/go/src" >> ~/.profile
-echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.profile
+echo "export GOPATH=/home/pi/go" >> ~/.profile
+echo "export GOSRC=/home/pi/go/src" >> ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:/home/pi/go/bin" >> ~/.profile
+source ~/.profile
+
+echo "Setting up Go environment variables for the Pi user"
+echo "" >> /home/pi/.profile
+echo "# golang" >> /home/pi/.profile
+echo "export GOPATH=~/go" >> /home/pi/.profile
+echo "export GOSRC=~/go/src" >> /home/pi/.profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 
 # install Git
-sudo apt -y install git
+apt -y install git
+
+# Change Install Directory
+cd /home/pi
 
 # Install GVT
 go get -u github.com/FiloSottile/gvt
+
+cd /home/pi/go
 
 # Install AV-Scheduling Dependencies
 #gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
@@ -145,12 +159,18 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 go get github.com/byu-oit/av-scheduling-ui
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 npm install --save
+npm install angular2 angular2-cli
 
+<<<<<<< HEAD
 # Download Systemd Unit to launch and manage the Scheduling-Panel
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/scheduling-panel.service > /usr/lib/systemd/system/scheduling-panel.service
 systemctl enable scheduling-panel.service
 
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
 chmod 754 /usr/local/bin/schedule-panel.sh
+=======
+# Start the Scheduling-Panel
+# go run server.go &
+>>>>>>> 88ad22bc2f65fce2b0f95797d68f22ccfab0193c
 
 #sleep 60

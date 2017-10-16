@@ -1,0 +1,18 @@
+[Unit]
+Description=AV Scheduling Panel 
+After=salt-minion.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/schedule-panel.sh start
+User=pi
+Group=pi
+#ExecStop=/usr/local/go/src/go stop /home/pi/go/src/github.com/byu-oit/av-scheduling-ui/server.go
+#StandardInput=tty
+#TTYPath=/dev/tty2
+#TTYReset=yes
+#TTYVHangup=yes
+#Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
