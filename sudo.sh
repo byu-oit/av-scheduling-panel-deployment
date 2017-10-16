@@ -167,6 +167,7 @@ systemctl enable scheduling-panel.service
 
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
 chmod 754 /usr/local/bin/schedule-panel.sh
+chown pi:pi /usr/local/bin/schedule-panel.sh
 
 # Start the Scheduling-Panel
 # go run server.go &
