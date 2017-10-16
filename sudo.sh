@@ -161,16 +161,15 @@ cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 npm install --save
 npm install angular2 angular2-cli
 
-<<<<<<< HEAD
 # Download Systemd Unit to launch and manage the Scheduling-Panel
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/scheduling-panel.service > /usr/lib/systemd/system/scheduling-panel.service
 systemctl enable scheduling-panel.service
 
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
 chmod 754 /usr/local/bin/schedule-panel.sh
-=======
+
 # Start the Scheduling-Panel
 # go run server.go &
->>>>>>> 88ad22bc2f65fce2b0f95797d68f22ccfab0193c
+
 
 #sleep 60

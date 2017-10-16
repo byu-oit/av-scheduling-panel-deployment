@@ -1,5 +1,5 @@
 [Unit]
-Description=AV Scheduling Panel 
+Description=AV Scheduling Panel
 After=salt-minion.service
 
 [Service]
