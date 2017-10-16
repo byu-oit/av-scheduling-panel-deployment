@@ -146,7 +146,11 @@ go get github.com/byu-oit/av-scheduling-ui
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 npm install --save
 
-# Start the Scheduling-Panel
-go run server.go &
+# Download Systemd Unit to launch and manage the Scheduling-Panel
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/scheduling-panel.service > /usr/lib/systemd/system/scheduling-panel.service
+systemctl enable scheduling-panel.service
+
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
+chmod 754 /usr/local/bin/schedule-panel.sh
 
 #sleep 60
