@@ -66,6 +66,7 @@ sudo apt-get -y install salt-minion
 
 # Copy minion file and add minion
 cp /srv/files/minion /etc/salt/minion
+
 #PI_HOSTNAME=$(hostname)
 sed -i 's/\$PI_HOSTNAME/'$desired_hostname'/' /etc/salt/minion
 systemctl restart salt-minion
@@ -145,6 +146,10 @@ apt -y install git
 
 # Change Install Directory
 cd /home/pi
+
+# Configure git email and user name for pull requests
+git config --global user.email "av-scheduling-dev@byu.edu"
+git config --global user.name "AV Services"
 
 # Install GVT
 go get -u github.com/FiloSottile/gvt

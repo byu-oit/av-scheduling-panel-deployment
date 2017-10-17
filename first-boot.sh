@@ -3,7 +3,7 @@
 
 sleep 15
 
-printf "\n\nStolen From Danny\n\n"
+printf "\n\nDownloading the Goods\n\n"
 
 sudo chvt 2
 
