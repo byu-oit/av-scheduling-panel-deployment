@@ -162,9 +162,14 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 
 # Install Scheduling-Panel
 go get github.com/byu-oit/av-scheduling-ui
+cd $GOPATH/src/github.com/byu-oit
+chown -fR pi:pi av-scheduling-ui
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
+rm -fR node_modules
+npm install -g npm
+npm install -g node-gyp
+npm install -g angular angular-cli
 npm install --save
-npm install angular2 angular2-cli
 
 # Download Systemd Unit to launch and manage the Scheduling-Panel
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/scheduling-panel.service > /usr/lib/systemd/system/scheduling-panel.service
