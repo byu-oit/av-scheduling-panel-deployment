@@ -171,9 +171,9 @@ cd $GOPATH/src/github.com/byu-oit
 chown -fR pi:pi av-scheduling-ui
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 rm -fR node_modules
-npm install -g npm
-npm install -g node-gyp
-npm install -g angular angular-cli
+npm install -g --save --save-dev npm
+npm install -g --save --save-dev node-gyp
+npm install -g  --save --save-dev angular angular-cli
 npm install --save
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.ts
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.prod.ts
