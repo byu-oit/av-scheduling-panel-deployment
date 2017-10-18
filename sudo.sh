@@ -141,6 +141,11 @@ echo "export GOPATH=~/go" >> /home/pi/.profile
 echo "export GOSRC=~/go/src" >> /home/pi/.profile
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 
+# Setting up profile aliases
+echo "Adding profile aliases"
+echo "" >> /home/pi/.profile
+echo "alias ll=\x22ls -la\x22"
+
 # install Git
 apt -y install git
 
