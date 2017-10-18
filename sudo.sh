@@ -168,21 +168,20 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 # Install Scheduling-Panel
 go get github.com/byu-oit/av-scheduling-ui
 
-# Testing fix for node-gyp
-USER node
-RUN mkdir /home/pi/.npm-global
-ENV PATH=/home/pi/.npm-global/bin:$PATH
-ENV NPM_CONFIG_PREFIX=/home/pi/.npm-global
-RUN npm install -g @angular/cli
-
 # install node-gyp
 cd /home/pi
 npm install -g node-gyp
+sleep 60
+echo "node-gyp installed moving to install Angular"
+sleep 60
 
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 #rm -fR node_modules
-#npm install -g --save --save-dev angular angular-cli
+npm install -g --save --save-dev angular angular-cli
 npm install --save
+sleep 60
+echo "Angular installed . . . ."
+sleep 60
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.ts
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.prod.ts
 
