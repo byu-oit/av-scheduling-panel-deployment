@@ -167,13 +167,13 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 
 # Install Scheduling-Panel
 go get github.com/byu-oit/av-scheduling-ui
-cd $GOPATH/src/github.com/byu-oit
-chown -fR pi:pi av-scheduling-ui
+
+cd /home/pi
+npm install -g node-gyp
+
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
-rm -fR node_modules
-npm install -g --save --save-dev npm
-npm install -g --save --save-dev node-gyp
-npm install -g  --save --save-dev angular angular-cli
+#rm -fR node_modules
+npm install -g --save --save-dev angular angular-cli
 npm install --save
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.ts
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.prod.ts
@@ -185,6 +185,9 @@ systemctl enable scheduling-panel.service
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
 chmod 754 /usr/local/bin/schedule-panel.sh
 chown pi:pi /usr/local/bin/schedule-panel.sh
+
+cd $GOPATH/src/github.com/byu-oit
+chown -fR pi:pi av-scheduling-ui
 
 # Start the Scheduling-Panel
 # go run server.go &
