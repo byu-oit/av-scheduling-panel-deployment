@@ -171,17 +171,16 @@ go get github.com/byu-oit/av-scheduling-ui
 # install node-gyp
 cd /home/pi
 npm install -g node-gyp
-sleep 60
+
 echo "node-gyp installed moving to install Angular"
-sleep 60
 
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 #rm -fR node_modules
 npm install -g --save --unsafe-perm angular angular-cli
 npm install --save --unsafe-perm
-sleep 60
+
 echo "Angular installed . . . ."
-sleep 60
+
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.ts
 cp -fR $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/template.environment.ts $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/src/environments/environment.prod.ts
 
