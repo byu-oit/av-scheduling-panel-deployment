@@ -110,7 +110,7 @@ sudo apt-get install -y nodejs
 #Download docker container
 #docker image pull httpd
 
-sleep 60
+#sleep 60
 
 #Configure container to run
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
