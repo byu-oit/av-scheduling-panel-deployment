@@ -116,15 +116,15 @@ sudo apt-get install -y nodejs
 #docker run -d -p 8011:80 --name="httpd" --restart=always httpd
 
 #Install go
-mkdir /home/pi/downloads
+mkdir -p /home/pi/downloads
 
 curl https://storage.googleapis.com/golang/go1.9.linux-armv6l.tar.gz -o /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
 tar -C /usr/local -xf /home/pi/downloads/go1.9.linux-armv6l.tar.gz
 
 echo "Setting up Go evironment"
-mkdir ~/go ~/go/src ~/go/bin ~/go/pkg
-mkdir /home/pi/go /home/pi/go/src /home/pi/go/bin /home/pi/go/pkg
+mkdir -p ~/go ~/go/src ~/go/bin ~/go/pkg
+mkdir -p /home/pi/go /home/pi/go/src /home/pi/go/bin /home/pi/go/pkg
 
 echo "Setting up Go evironmental variables"
 echo "" >> ~/.profile
