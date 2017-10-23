@@ -159,7 +159,7 @@ git config --global user.name "AV Services"
 # Install GVT
 go get -u github.com/FiloSottile/gvt
 
-cd /home/pi/go
+cd /home/pi/go/src
 
 # Install AV-Scheduling Dependencies
 #gvt fetch -branch master github.com/byu-oit/av-scheduling-ui -d
