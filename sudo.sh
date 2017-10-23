@@ -177,7 +177,7 @@ echo "node-gyp installed moving to install Angular"
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-ui/web/
 #rm -fR node_modules
 npm install -g --save --unsafe-perm angular angular-cli
-npm install --save --unsafe-perm
+npm install --unsafe-perm
 
 echo "Angular installed . . . ."
 
