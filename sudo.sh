@@ -52,7 +52,7 @@ apt -y install raspberrypi-kernel
 apt -y install xorg i3 suckless-tools chromium-browser
 
 # Install python3
-apt -y install python3 python3-pip python3-dev python-dev libffi-dev libxml2 libxml2-dev libxslt1-dev
+apt -y install python3 python3-pip python3-dev python-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libssl-dev
 
 
 # Default to Python 3
