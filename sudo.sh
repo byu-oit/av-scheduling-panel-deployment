@@ -51,10 +51,18 @@ apt -y install raspberrypi-kernel
 # Install UI dependencies
 apt -y install xorg i3 suckless-tools chromium-browser
 
+# Install python3
+apt -y install python3 python3-pip
+
+# Default to Python 3
+echo "alias python=python3" >> /home/pi/.profile
+echo "alias pip=pip3" >> /home/pi/.profile
+pip3 install --upgrade pip
+
 # Install an ARM build of docker-compose
 #apt -y install python-pip
 #easy_install --upgrade pip
-#pip install docker-compose
+pip3 install --upgrade docker-compose
 
 # Install Salt-Minion on Pi and configure minion to talk to the salt-master
 wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
@@ -144,7 +152,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 # Setting up profile aliases
 echo "Adding profile aliases"
 echo "" >> /home/pi/.profile
-echo "alias ll=\x22ls -la\x22"
+echo "alias ll=ls -la"
 
 # install Git
 apt -y install git
@@ -167,6 +175,11 @@ gvt fetch -branch master github.com/byu-oit/av-scheduling-ui
 
 # Install Scheduling-Panel
 go get github.com/byu-oit/av-scheduling-ui
+go get github.com/byu-oit/av-scheduling-exchange-microservice
+
+# Install microservice dependencies
+cd $GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice
+pip3 install -r requirements.txt
 
 # install node-gyp
 cd /home/pi
