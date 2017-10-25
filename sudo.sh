@@ -52,7 +52,7 @@ apt -y install raspberrypi-kernel
 apt -y install xorg i3 suckless-tools chromium-browser
 
 # Install python3
-apt -y install python3 python3-pip
+apt -y install python3 python3-pip python3-dev python-dev libffi-dev libxml2
 
 # Default to Python 3
 pip3 install --upgrade pip
@@ -179,7 +179,8 @@ go get github.com/byu-oit/av-scheduling-exchange-microservice
 
 # Install microservice dependencies
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice
-pip3 install -r requirements.txt
+#pip3 install -r requirements.txt
+pip3 install flask flask-restplus Flask-SQLAlchemy exchangelib
 
 # install node-gyp
 cd /home/pi
