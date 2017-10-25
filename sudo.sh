@@ -55,8 +55,6 @@ apt -y install xorg i3 suckless-tools chromium-browser
 apt -y install python3 python3-pip
 
 # Default to Python 3
-echo "alias python=python3" >> /home/pi/.profile
-echo "alias pip=pip3" >> /home/pi/.profile
 pip3 install --upgrade pip
 
 # Install an ARM build of docker-compose
@@ -152,7 +150,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> /home/pi/.profile
 # Setting up profile aliases
 echo "Adding profile aliases"
 echo "" >> /home/pi/.profile
-echo "alias ll=ls -la"
+echo "alias ll='ls -la'" >> /home/pi/.profile
+echo "alias python='python3'" >> /home/pi/.profile
+echo "alias pip='pip3'" >> /home/pi/.profile
 
 # install Git
 apt -y install git
