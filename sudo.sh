@@ -8,7 +8,7 @@ date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' 
 # Fix the keyboard layout
 curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/keyboard > /etc/default/keyboard
 
-echo "Type the desired hostname of this device (E.g. ITB-1006-CP2), followed by [ENTER]:"
+echo "Type the desired hostname of this device (E.g. ITB-1006-SP2), followed by [ENTER]:"
 
 read -e desired_hostname
 
@@ -46,14 +46,13 @@ apt -y autoremove
 apt -y autoclean
 
 # Patch the Dirty COW kernel vulnerability
-apt -y install raspberrypi-kernel
+# apt -y install raspberrypi-kernel
 
 # Install UI dependencies
 apt -y install xorg i3 suckless-tools chromium-browser
 
 # Install python3
 apt -y install python3 python3-pip python3-dev python-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libssl-dev
-
 
 # Default to Python 3
 pip3 install --upgrade pip
