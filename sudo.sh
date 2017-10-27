@@ -158,6 +158,7 @@ echo "alias pip='pip3'" >> /home/pi/.profile
 echo "alias ll='ls -la'" >> /home/pi/.profile
 echo "alias PSPORT='netstat -tulpn | grep :'" >> /home/pi/.profile
 echo "alias PS='ps -ef | grep -i'" >> /home/pi/.profile
+echo "cd ~/go/src/github.com/byu-oit/av-scheduling-ui" >> /home/pi/.profile
 
 # install Git
 apt -y install git
