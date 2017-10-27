@@ -155,6 +155,9 @@ echo "" >> /home/pi/.profile
 echo "alias ll='ls -la'" >> /home/pi/.profile
 echo "alias python='python3'" >> /home/pi/.profile
 echo "alias pip='pip3'" >> /home/pi/.profile
+echo "alias ll='ls -la'" >> /home/pi/.profile
+echo "alias PSPORT='netstat -tulpn | grep :'" >> /home/pi/.profile
+echo "alias PS='ps -ef | grep -i'" >> /home/pi/.profile
 
 # install Git
 apt -y install git
