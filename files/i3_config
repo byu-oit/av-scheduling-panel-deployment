@@ -163,6 +163,6 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command i3status
 }
-
+python %GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/proxy.py &
 #exec /home/pi/update_docker_containers.sh
 exec chromium-browser --kiosk --incognito --disable-pinch --disable-session-crashed-bubble --overscroll-history-navigation=0 --disable-infobars http://localhost:8011
