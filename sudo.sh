@@ -182,7 +182,7 @@ go get github.com/byu-oit/av-scheduling-exchange-microservice
 # Install microservice dependencies
 cd $GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice
 #pip3 install -r requirements.txt
-pip3 install flask flask-restplus Flask-SQLAlchemy exchangelib
+pip install flask flask-restplus Flask-SQLAlchemy flask-cors exchangelib
 
 # install node-gyp
 cd /home/pi
