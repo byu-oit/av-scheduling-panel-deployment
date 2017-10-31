@@ -4,3 +4,22 @@ if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
         startx -- -nocursor
 fi
 
+export O365_RESOURCE_ID=$(hostname | sed 's/[.-]/_/g' | sed 's/ /_/g')
+export O365_RESOURCE_NAME=$(hostname | sed 's/[-_.]/ /g')
+export SPANEL_HOSTNAME=$(hostname)
+export O365_DOMAIN=$(grep domain /etc/resolv.conf|sed -n -e 's/^.*domain //p')
+export hostIP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+export hostWLANIP=$(/sbin/ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1)
+export FLASK_APP=proxy.py
+
+alias ll="ls -la"
+alias python="python3"
+alias pip="pip3"
+alias PSPORT="netstat -tulpn | grep :"
+alias PS="ps -ef | grep -i"
+
+alias flaskup="export FLASK_APP=proxy.py && cd $GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/ && flask run --host=0.0.0.0 &"
+
+xset -display :0 dpms force on
+
+cd ~/go/src/github.com/byu-oit/av-scheduling-ui
