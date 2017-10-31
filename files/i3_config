@@ -163,6 +163,10 @@ bindsym Mod4+r mode "resize"
 bar {
         status_command i3status
 }
-python %GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/proxy.py &
+export hostIP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+export hostWLANIP=$(/sbin/ip -o -4 addr list wlan0 | awk '{print $4}' | cut -d/ -f1)
+export FLASK_APP=$GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/proxy.py
+#python %GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/proxy.py &
+flask run --host=0.0.0.0 %GOPATH/src/github.com/byu-oit/av-scheduling-exchange-microservice/proxy.py &
 #exec /home/pi/update_docker_containers.sh
 exec chromium-browser --kiosk --incognito --disable-pinch --disable-session-crashed-bubble --overscroll-history-navigation=0 --disable-infobars http://localhost:8011
