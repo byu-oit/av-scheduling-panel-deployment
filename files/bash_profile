@@ -4,8 +4,8 @@ if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
         startx -- -nocursor
 fi
 
-export O365_RESOURCE_ID=$(hostname | sed 's/[.-]/_/g' | sed 's/ /_/g')
-export O365_RESOURCE_NAME=$(hostname | sed 's/[-_.]/ /g')
+export O365_RESOURCE_ID=$(hostname | sed 's/[.-]/_/g' | sed 's/ /_/g' | cut -d_ -f1,2)
+export O365_RESOURCE_NAME=$(echo $(hostname) | cut -d- -f1,2 | sed 's/[-_.]/ /g')
 export SPANEL_HOSTNAME=$(hostname)
 export O365_DOMAIN=$(grep domain /etc/resolv.conf|sed -n -e 's/^.*domain //p')
 export hostIP=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
