@@ -17,8 +17,14 @@ sudo chvt 2
 	#	sleep 30
 	#	echo "Trying again."
 	#done
-
-	curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
+	while true; do
+    curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
+    if [ $? -eq 0 ]; then
+        break
+    fi
+    sleep 5
+  done
+	#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
 
 	#sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh
 	sudo chmod 755 /tmp/pi-setup.sh
