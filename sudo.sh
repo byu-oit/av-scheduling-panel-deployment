@@ -86,7 +86,7 @@ systemctl enable getty@tty1.service
 
 # Enable SSH connections
 touch /boot/ssh
-curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/sshbanner > /etc/sshbanner
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/sshbanner > /etc/sshbanner
 sed -ie 's/#Banner \/etc\/issue.net/Banner \/etc\/sshbanner/g' /etc/ssh/sshd_config
 
 # Set the timezone
