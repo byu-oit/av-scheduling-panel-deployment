@@ -160,7 +160,9 @@ echo "alias pip='pip3'" >> /home/pi/.profile
 echo "alias ll='ls -la'" >> /home/pi/.profile
 echo "alias PSPORT='netstat -tulpn | grep :'" >> /home/pi/.profile
 echo "alias PS='ps -ef | grep -i'" >> /home/pi/.profile
+echo "alias NET='netstat -tlapn|grep -e '0.0.0.0:5000' -e '0.0.0.0:8011'"
 echo "cd ~/go/src/github.com/byu-oit/av-scheduling-ui" >> /home/pi/.profile
+echo "NET" >> /home/pi/.profile
 
 # install Git
 apt -y install git
@@ -213,6 +215,7 @@ systemctl enable scheduling-panel.service
 curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/schedule-panel.sh > /usr/local/bin/schedule-panel.sh
 chmod 754 /usr/local/bin/schedule-panel.sh
 chown pi:pi /usr/local/bin/schedule-panel.sh
+chown -fR pi:pi /home/pi/.npm
 
 cd $GOPATH/src/github.com/byu-oit
 chown -fR pi:pi av-scheduling-ui
