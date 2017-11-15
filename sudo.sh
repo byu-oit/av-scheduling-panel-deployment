@@ -38,12 +38,27 @@ echo "127.0.1.1    $desired_hostname" >> /etc/hosts
 # chmod +x /tmp/sss-setup.sh
 # sh -c "bash /tmp/sss-setup.sh"
 
+# Install Salt-Minion on Pi and configure minion to talk to the salt-master
+wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
+
 # Perform general updating
 apt update
 apt -y upgrade
 apt -y dist-upgrade
 apt -y autoremove
 apt -y autoclean
+
+sudo apt-get update
+sudo apt-get -y install salt-minion
+
+# Copy minion file and add minion
+cp /srv/files/minion /etc/salt/minion
+
+#PI_HOSTNAME=$(hostname)
+sed -i 's/\$PI_HOSTNAME/'$desired_hostname'/' /etc/salt/minion
+echo "$desired_hostname" >> /etc/salt/minion.d
+systemctl restart salt-minion
 
 # Patch the Dirty COW kernel vulnerability
 # apt -y install raspberrypi-kernel
@@ -64,20 +79,7 @@ pip3 install ez_setup lxml
 #easy_install --upgrade pip
 pip3 install --upgrade docker-compose
 
-# Install Salt-Minion on Pi and configure minion to talk to the salt-master
-wget -O - https://repo.saltstack.com/apt/debian/8/armhf/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -
-curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/files/saltstack.list > /etc/apt/sources.list.d/saltstack.list
-#cp /srv/files/saltstack.list /etc/apt/sources.list.d/saltstack.list
 
-sudo apt-get update
-sudo apt-get -y install salt-minion
-
-# Copy minion file and add minion
-cp /srv/files/minion /etc/salt/minion
-
-#PI_HOSTNAME=$(hostname)
-sed -i 's/\$PI_HOSTNAME/'$desired_hostname'/' /etc/salt/minion
-systemctl restart salt-minion
 
 # Configure automatic login for the `pi` user
 mkdir -pv /etc/systemd/system/getty@tty1.service.d/
