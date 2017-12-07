@@ -57,7 +57,7 @@ cp /srv/files/minion /etc/salt/minion
 
 #PI_HOSTNAME=$(hostname)
 sed -i 's/\$PI_HOSTNAME/'$desired_hostname'/' /etc/salt/minion
-echo "$desired_hostname" >> /etc/salt/minion.d
+echo "$desired_hostname" >> /etc/salt/minion_id
 systemctl restart salt-minion
 
 # Patch the Dirty COW kernel vulnerability
