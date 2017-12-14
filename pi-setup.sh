@@ -3,13 +3,20 @@
 # This script is used to install and set up dependencies on a newly wiped/installed Raspberry Pi
 # For clean execution, run this script inside of the /tmp directory with `./pi-setup.sh`
 # The script assumes the username of the autologin user is "pi"
-
+#################### PRODUCTION CODE #####################################################################
 # Run the `sudo.sh` code block to install necessary packages and commands
-curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/sudo.sh > /tmp/sudo.sh
+#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/sudo.sh > /tmp/sudo.sh
+#sudo cp /srv/scripts/sudo.sh /tmp/sudo.sh
+#chmod +x /tmp/sudo.sh
+#sudo sh -c "bash /tmp/sudo.sh"
+##########################################################################################################
+################### TEST CODE ############################################################################
+# Run the `sudo.sh` code block to install necessary packages and commands
+curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/feature/docker_support/sudo.sh > /tmp/sudo.sh
 #sudo cp /srv/scripts/sudo.sh /tmp/sudo.sh
 chmod +x /tmp/sudo.sh
 sudo sh -c "bash /tmp/sudo.sh"
-
+##########################################################################################################
 # Make `startx` result in starting the i3 window manager
 curl https://raw.githubusercontent.com/byuoitav/raspi-deployment-microservice/master/files/xinitrc > /home/pi/.xinitrc
 chmod +x /home/pi/.xinitrc
