@@ -17,13 +17,24 @@ sudo chvt 2
 	#	sleep 30
 	#	echo "Trying again."
 	#done
-	while true; do
-    curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
-    if [ $? -eq 0 ]; then
+############# Production - Pull from Master #####################
+#	while true; do
+#    curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
+#    if [ $? -eq 0 ]; then
+#        break
+#    fi
+#    sleep 5
+#  done
+#################################################################
+############## Test Code ########################################
+  while true; do
+  curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/feature/docker_support/pi-setup.sh > /tmp/pi-setup.sh
+   if [ $? -eq 0 ]; then
         break
-    fi
-    sleep 5
-  done
+   fi
+   sleep 5
+   done
+#################################################################
 	#curl https://raw.githubusercontent.com/byu-oit/av-scheduling-panel-deployment/master/pi-setup.sh > /tmp/pi-setup.sh
 
 	#sudo cp /srv/scripts/pi-setup.sh /tmp/pi-setup.sh
