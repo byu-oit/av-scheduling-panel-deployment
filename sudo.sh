@@ -73,6 +73,7 @@ apt -y install python3 python3-pip python3-dev python-dev libffi-dev libxml2 lib
 pip3 install --upgrade pip
 pip3 install --upgrade setuptools
 pip3 install ez_setup lxml
+pip3 install maya
 
 # Install an ARM build of docker-compose
 #apt -y install python-pip
