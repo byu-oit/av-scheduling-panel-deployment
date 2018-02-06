@@ -197,6 +197,7 @@ pip install --ignore-installed --no-cache flask flask-restplus Flask-SQLAlchemy 
 
 # install node-gyp
 cd /home/pi
+npm i -g npm
 npm install -g node-gyp
 
 echo "node-gyp installed moving to install Angular"
